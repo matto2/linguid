@@ -5,13 +5,13 @@ const navLinks = [
 ];
 ---
 
-<header class="text-white py-4">
-  <div class="max-w-8xl mx-auto px-4 flex justify-between items-center">
+<header class="text-white py-0 md:py-4">
+  <div class="max-w-8xl mx-auto px-0 md:px-4 flex justify-between items-center">
     <!-- Logo -->
     <a href="/">
       <img
         src="/linguid-horiz-reverse.svg"
-        class="w-40"
+        class="w-40 my-4"
         srcset="/linguid-horiz-reverse.svg"
         alt="linguid logo"
       />
@@ -36,7 +36,10 @@ const navLinks = [
     </nav>
 
     <!-- Mobile Menu Button -->
-    <button id="menu-button" class="md:hidden p-2 focus:outline-none">
+    <button
+      id="menu-button"
+      class="md:hidden p-2 focus:outline-none cursor-pointer"
+    >
       <img src="/menu.svg" alt="Menu" class="w-7 h-7" />
     </button>
   </div>
