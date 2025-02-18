@@ -5,20 +5,27 @@ const navLinks = [
 ];
 ---
 
-<header class="bg-black text-white py-4">
-  <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+<header class="text-white py-4">
+  <div class="max-w-8xl mx-auto px-4 flex justify-between items-center">
     <!-- Logo -->
-    <a href="/" class="text-2xl font-bold">Logo</a>
+    <a href="/">
+      <img
+        src="/linguid-horiz-reverse.svg"
+        class="w-40"
+        srcset="/linguid-horiz-reverse.svg"
+        alt="linguid logo"
+      />
+    </a>
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex">
-      <ul class="flex space-x-6">
+      <ul class="flex space-x-6 text-xl">
         {
           navLinks.map((link) => (
             <li>
               <a
                 href={link.href}
-                class="hover:text-gray-400 transition duration-300"
+                class="hover:text-violet-400 transition duration-100"
               >
                 {link.label}
               </a>
@@ -30,24 +37,12 @@ const navLinks = [
 
     <!-- Mobile Menu Button -->
     <button id="menu-button" class="md:hidden p-2 focus:outline-none">
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
+      <img src="/menu.svg" alt="Menu" class="w-7 h-7" />
     </button>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-black text-white p-4">
+  <div id="mobile-menu" class="hidden md:hidden text-white p-4">
     <ul class="space-y-4">
       {
         navLinks.map((link) => (
