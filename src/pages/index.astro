@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import learning from "../assets/learning.jpg";
 import { Icon } from "astro-icon/components";
 const title = "Linguid - HOME";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title={title}>
@@ -89,4 +90,21 @@ const title = "Linguid - HOME";
       </div>
     </div>
   </div>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 p-6">
+    <!-- Block 1 -->
+    <Card
+      title="Feature 1"
+      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti unde enim, vel ipsam eaque nisi dolor itaque quam labore omnis praesentium quas ducimus quo velit autem aspernatur quaerat vitae!"
+    />
+    <Card
+      title="Feature 2"
+      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti unde enim, vel ipsam eaque nisi dolor itaque quam labore omnis praesentium quas ducimus quo velit autem aspernatur quaerat vitae!"
+    />
+    <Card
+      title="Feature 3"
+      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti unde enim, vel ipsam eaque nisi dolor itaque quam labore omnis praesentium quas ducimus quo velit autem aspernatur quaerat vitae!"
+    />
+    <!-- Block 2 -->
+  </section>
 </Layout>
