@@ -39,7 +39,7 @@ const title = "Linguid - HOME";
       <img
         src="/linguid-icon.svg"
         alt="linguid icon"
-        class="animate-float px-18"
+        class="animate-float p-12 sm:p-18 md:p-24 lg:p-32"
       />
     </div>
 
@@ -48,7 +48,20 @@ const title = "Linguid - HOME";
       <h3 class="text-4xl text-center text-violet-300 py-4">
         Join the Revolution
       </h3>
-      <form name="contact" netlify class="w-full space-y-6 text-white">
+      <form
+        name="contact"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        class="w-full space-y-6 text-white"
+      >
+        <!-- Honeypot Field (Hidden) -->
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
+
         <div>
           <label class="block text-lg font-medium mb-2" for="email">Email</label
           >
