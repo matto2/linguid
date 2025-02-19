@@ -2,7 +2,7 @@
 import "../styles/global.css";
 const { title } = Astro.props;
 import NavBar from "../components/NavBar.astro";
-// import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -18,10 +18,11 @@ import NavBar from "../components/NavBar.astro";
     <div class="mx-auto px-4 2xl:px-0 max-w-7xl">
       <!-- <Header /> -->
       <NavBar />
-      > <slot />
+      <slot />
     </div>
     <!-- <script>
       import "../scripts/menu.js";
     </script> -->
+    <Footer />
   </body>
 </html>

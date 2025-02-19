@@ -45,3 +45,14 @@ html, body {
 /* .hidden {
   display: none;
 } */
+
+
+:root {
+  --brand-primary: #a8a29e;
+  --brand-secondary: #be123c;
+  --brand-accent: #005a9c;
+  --text-light: #f5f5f4;
+  --text-medium: #78716c;
+  --text-dark: #44403c;
+  --brand-secondaryDark: #E11D48;
+}
