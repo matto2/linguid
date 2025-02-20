@@ -10,45 +10,28 @@ import Card from "../components/Card.astro";
 <Layout title={title}>
   <div class="flex justify-center">
     <span
-      class="text-center mt-4 md:mt-6 mb-4 text-5xl md:text-6xl lg:text-7xl 2xl:text-10xl font-bold bg-gradient-to-r from-violet-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient"
+      class="text-center mt-4 md:mt-6 mb-4 text-4xl md:text-6xl lg:text-7xl 2xl:text-10xl font-bold bg-gradient-to-r from-violet-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient max-w-4xl"
     >
-      Redefining Language Learning
+      Welcome to the Future of Language Learning
     </span>
   </div>
-  <h3
+  <!-- <h3
     class="text-center text-xl md:text-2xl lg:text-3xl 2xl:text-4xl text-violet-300 mb-12 md:mb-24"
   >
     Immerse yourself in the future of linguistic mastery
-  </h3>
+  </h3> -->
 
-  <div class="grid grid-cols-1 md:grid-cols-2 my-8 gap-12">
-    <div class="flex justify-center">
-      <Image src={learning} alt="learning" class="rounded-3xl" />
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 my-8 gap-8">
     <div class="flex flex-col justify-center h-full">
-      <h3 class="text-4xl text-violet-300 py-4">Headline</h3>
-      <p class="text-amber-50 text-xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti
-        unde enim, vel ipsam eaque nisi dolor itaque quam labore omnis
-        praesentium quas ducimus quo velit autem aspernatur quaerat vitae!
+      <!-- <h3 class="text-4xl text-violet-300 py-4">Headline</h3> -->
+      <p class="text-amber-50 text-xl px-8">
+        Ready to experiemce a smarter way to learn languages? Sign up for early
+        access to our mobile app!
       </p>
     </div>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-    <!-- Floating Logo - Centered Horizontally -->
-    <div class="flex justify-center md:justify-center">
-      <img
-        src="/linguid-icon.svg"
-        alt="linguid icon"
-        class="animate-float py-12 px-12 sm:px-18 md:px-24 lg:px-32"
-      />
-    </div>
-
-    <!-- Form - Wider Inputs & Button -->
-    <div class="flex flex-col justify-center h-full w-full px-4 md:px-8">
+    <div class="flex flex-col justify-center h-full w-full px-2 md:px-8">
       <div class="bg-black rounded-lg p-6">
-        <h3 class="text-4xl text-center text-violet-300 pb-4">
+        <h3 class="text-3xl md:text-4xl text-center text-violet-300 pb-4">
           Join the Revolution
         </h3>
         <form
@@ -90,21 +73,4 @@ import Card from "../components/Card.astro";
       </div>
     </div>
   </div>
-
-  <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 p-6">
-    <!-- Block 1 -->
-    <Card
-      title="Feature 1"
-      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti unde enim, vel ipsam eaque nisi dolor itaque quam labore omnis praesentium quas ducimus quo velit autem aspernatur quaerat vitae!"
-    />
-    <Card
-      title="Feature 2"
-      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti unde enim, vel ipsam eaque nisi dolor itaque quam labore omnis praesentium quas ducimus quo velit autem aspernatur quaerat vitae!"
-    />
-    <Card
-      title="Feature 3"
-      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti unde enim, vel ipsam eaque nisi dolor itaque quam labore omnis praesentium quas ducimus quo velit autem aspernatur quaerat vitae!"
-    />
-    <!-- Block 2 -->
-  </section>
 </Layout>
