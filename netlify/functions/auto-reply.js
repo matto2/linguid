@@ -1,29 +1,38 @@
 const sgMail = require('@sendgrid/mail');
 
 exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: JSON.stringify({ error: 'Method Not Allowed' }) };
+  }
+
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   try {
-    const { email } = JSON.parse(event.body);
+    // ✅ Convert the x-www-form-urlencoded data to an object
+    const formData = new URLSearchParams(event.body);
+    const email = formData.get('email'); // Extract email from the form
+
+    if (!email) {
+      console.error('Missing email field in form submission.');
+      return { statusCode: 400, body: JSON.stringify({ error: 'Missing email' }) };
+    }
+
+    console.log(`Sending email to: ${email}`);
 
     const msg = {
-      to: email, // User who submitted the form
-      from: 'your-email@example.com', // Replace with your verified email
+      to: email,
+      from: 'your-email@example.com', // Replace with your verified SendGrid sender email
       subject: 'Thank you for signing up!',
-      text: 'We appreciate your interest! Stay tuned for updates.',
-      html: '<p>We appreciate your interest! Stay tuned for updates.</p>',
+      text: 'We appreciate your interest in Learning with Linguid!',
+      html: '<p>We appreciate your interest in <b>Learning with Linguid</b>! Stay tuned for updates.</p>',
     };
 
     await sgMail.send(msg);
+    console.log('Email sent successfully!');
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Email sent!' }),
-    };
+    return { statusCode: 200, body: JSON.stringify({ message: 'Email sent!' }) };
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
+    console.error('Error sending email:', error);
+    return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
   }
 };
