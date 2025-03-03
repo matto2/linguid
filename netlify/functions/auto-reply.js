@@ -20,13 +20,36 @@ exports.handler = async (event) => {
     console.log(`Sending email to: ${email}`);
 
     const msg = {
-      to: email,
-      from: 'learnwithlinguid@gmail.com', // Replace with your verified SendGrid sender email
-      subject: 'Thank you for signing up!',
-      text: 'We appreciate your interest in Learning with Linguid!',
-      html: '<p>We appreciate your interest in <b>Learning with Linguid</b>! Stay tuned for updates.</p>',
-    };
-
+        to: email,
+        from: 'learnwithlinguid@gmail.com', // Replace with your verified SendGrid sender email
+        subject: 'Welcome to The Future of Language Learning!',
+        text: `Thank you for signing up to test out LiNGUiD! We're thrilled to have you on board.
+      
+      Your feedback is incredibly valuable to us. We want to make sure this app is the best it can be for language learners like you.
+      
+      👉 Try the app here: https://linguid.vercel.app/
+      
+      Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:
+      
+      📝 Give Feedback: https://your-google-form-link.com
+      
+      Thanks for being part of our journey!
+      - The LiNGUiD Team`,
+      
+        html: `
+          <p>Thank you for signing up to test out <b>LiNGUiD</b>! We're thrilled to have you on board.</p>
+          
+          <p>Your feedback is incredibly valuable to us. We want to make sure this app is the best it can be for language learners like you.</p>
+          
+          <p><strong>👉 Try the app here:</strong> <a href="https://your-app-link.com" target="_blank" style="color: #1a73e8; font-weight: bold;">Launch LiNGUiD</a></p>
+          
+          <p>Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:</p>
+          
+          <p><strong>📝 Give Feedback:</strong> <a href="https://your-google-form-link.com" target="_blank" style="color: #1a73e8; font-weight: bold;">Submit Feedback</a></p>
+          
+          <p>Thanks for being part of our journey!<br>- The LiNGUiD Team</p>
+        `,
+      };
     await sgMail.send(msg);
     console.log('Email sent successfully!');
 
