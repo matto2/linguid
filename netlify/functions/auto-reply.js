@@ -21,7 +21,7 @@ exports.handler = async (event) => {
 
     const msg = {
       to: email,
-      from: 'your-email@example.com', // Replace with your verified SendGrid sender email
+      from: 'learnwithlinguid@gmail.com', // Replace with your verified SendGrid sender email
       subject: 'Thank you for signing up!',
       text: 'We appreciate your interest in Learning with Linguid!',
       html: '<p>We appreciate your interest in <b>Learning with Linguid</b>! Stay tuned for updates.</p>',
