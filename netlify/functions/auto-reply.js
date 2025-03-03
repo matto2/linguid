@@ -41,7 +41,7 @@ exports.handler = async (event) => {
           
           <p>Your feedback is incredibly valuable to us. We want to make sure this app is the best it can be for language learners like you.</p>
           
-          <p><strong>👉 Try the app here:</strong> <a href="https://your-app-link.com" target="_blank" style="color: #1a73e8; font-weight: bold;">Launch LiNGUiD</a></p>
+          <p><strong>👉 Try the app here:</strong> <a href="https://linguid.vercel.app/" target="_blank" style="color: #1a73e8; font-weight: bold;">Launch LiNGUiD</a></p>
           
           <p>Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:</p>
           
