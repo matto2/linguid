@@ -45,7 +45,7 @@ exports.handler = async (event) => {
           
           <p>Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:</p>
           
-          <p><strong>📝 Give Feedback:</strong> <a href="https://your-google-form-link.com" target="_blank" style="color: #1a73e8; font-weight: bold;">Submit Feedback</a></p>
+          <p><strong>📝 Give Feedback:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSe64p-rO44MoaeTdob6-ssTV2k-gOHdXMQm5eeiYiiuQCVQVg/viewform?usp=dialog" target="_blank" style="color: #1a73e8; font-weight: bold;">Submit Feedback</a></p>
           
           <p>Thanks for being part of our journey!<br>- The LiNGUiD Team</p>
         `,
