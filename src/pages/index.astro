@@ -77,6 +77,29 @@ import Card from "../components/Card.astro";
             </button>
           </div>
         </form>
+        <script>
+          document
+            .querySelector("form")
+            .addEventListener("submit", async function (event) {
+              event.preventDefault();
+
+              const formData = new FormData(this);
+
+              const response = await fetch("/.netlify/functions/auto-reply", {
+                method: "POST",
+                body: new URLSearchParams(formData).toString(),
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+              });
+
+              if (response.ok) {
+                alert("Check your email for confirmation!");
+              } else {
+                alert("Something went wrong. Please try again.");
+              }
+            });
+        </script>
       </div>
     </div>
   </div>
