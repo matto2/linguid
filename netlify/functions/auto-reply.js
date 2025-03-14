@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     // ✅ Convert the x-www-form-urlencoded data to an object
     const formData = new URLSearchParams(event.body);
     const email = formData.get('email'); // Extract email from the form
-
+    const unsubscribeUrl = `https://learnwithlinguid.com/unsubscribe?email=${encodeURIComponent(email)}`;
     if (!email) {
       console.error('Missing email field in form submission.');
       return { statusCode: 400, body: JSON.stringify({ error: 'Missing email' }) };
@@ -20,6 +20,9 @@ exports.handler = async (event) => {
     console.log(`Sending email to: ${email}`);
 
     const msg = {
+      headers: {
+        "List-Unsubscribe": `<${unsubscribeUrl}>`
+      },
         to: email,
         from: 'learnwithlinguid@gmail.com', // Replace with your verified SendGrid sender email
         subject: 'Welcome to The Future of Language Learning!',
@@ -32,6 +35,8 @@ exports.handler = async (event) => {
       Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:
       
       📝 Give Feedback: https://your-google-form-link.com
+
+      If you no longer want to receive emails from us, you can unsubscribe here: ${unsubscribeUrl}
       
       Thanks for being part of our journey!
       - The LiNGUiD Team`,
@@ -46,6 +51,12 @@ exports.handler = async (event) => {
           <p>Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:</p>
           
           <p><strong>📝 Give Feedback:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSe64p-rO44MoaeTdob6-ssTV2k-gOHdXMQm5eeiYiiuQCVQVg/viewform?usp=dialog" target="_blank" style="color: #1a73e8; font-weight: bold;">Submit Feedback</a></p>
+
+          <hr>
+<p style="font-size: 12px; color: #666;">
+  If you no longer want to receive these emails, you can 
+  <a href="${unsubscribeUrl}" target="_blank" style="color: #666; text-decoration: underline;">unsubscribe here</a>.
+</p>
           
           <p>Thanks for being part of our journey!<br>- The LiNGUiD Team</p>
         `,
