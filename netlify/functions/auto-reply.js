@@ -53,11 +53,12 @@ Your feedback is incredibly valuable to us. We want to make sure this app is the
 Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:
       
 📝 Give Feedback: https://your-google-form-link.com
-
-If you no longer want to receive emails from us, you can unsubscribe here: ${unsubscribeUrl}
       
 Thanks for being part of our journey!
-- The LiNGUiD Team`,
+- The LiNGUiD Team
+
+----------------------------------------------------------
+If you no longer want to receive emails from us, you can unsubscribe here: ${unsubscribeUrl}`,
       
       html: `
         <p>Thank you for signing up to test out <b>LiNGUiD</b>! We're thrilled to have you on board.</p>
@@ -70,13 +71,13 @@ Thanks for being part of our journey!
         
         <p><strong>📝 Give Feedback:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSe64p-rO44MoaeTdob6-ssTV2k-gOHdXMQm5eeiYiiuQCVQVg/viewform?usp=dialog" target="_blank" style="color: #1a73e8; font-weight: bold;">Submit Feedback</a></p>
 
+        <p>Thanks for being part of our journey!<br>- The LiNGUiD Team</p>
+        
         <hr>
         <p style="font-size: 12px; color: #666;">
           If you no longer want to receive these emails, you can 
           <a href="${unsubscribeUrl}" target="_blank" style="color: #666; text-decoration: underline;">unsubscribe here</a>.
         </p>
-        
-        <p>Thanks for being part of our journey!<br>- The LiNGUiD Team</p>
       `,
     };
 
