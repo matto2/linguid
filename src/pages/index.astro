@@ -1,106 +1,287 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import learning from "../assets/learning.jpg";
-import { Icon } from "astro-icon/components";
-const title = "Linguid - HOME";
-import Card from "../components/Card.astro";
+
+const title = "LiNGUiD | Learn French through real short-form video";
+const description =
+  "LiNGUiD turns real French videos into listening practice with tap-to-translate captions, saved words, review, and AI chat.";
+
+const features = [
+  {
+    label: "Watch",
+    title: "Real video, made usable.",
+    text: "Short-form French clips become structured listening practice with captions that learners can actually work with.",
+  },
+  {
+    label: "Save",
+    title: "Vocabulary follows the learner.",
+    text: "Words from captions can be saved, reviewed, and practiced later instead of disappearing when the video ends.",
+  },
+  {
+    label: "Practice",
+    title: "Review connects back to context.",
+    text: "Practice is grounded in the videos and conversations where the learner first met the language.",
+  },
+];
+
+const creatorPromises = [
+  "Official embeds first",
+  "Clear creator attribution",
+  "Permission-based hosting",
+  "No scraping",
+  "No AI training on creator content",
+  "Fast takedowns on request",
+];
 ---
 
-<Layout title={title}>
-  <div class="flex justify-center">
-    <span
-      class="py-1 text-center mt-4 md:mt-6 mb-4 text-4xl md:text-6xl lg:text-7xl 2xl:text-10xl font-bold bg-gradient-to-r from-violet-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient max-w-4xl overflow-visible"
-    >
-      Welcome to the Future of Language Learning
-    </span>
-  </div>
-  <!-- <h3
-    class="text-center text-xl md:text-2xl lg:text-3xl 2xl:text-4xl text-violet-300 mb-12 md:mb-24"
-  >
-    Immerse yourself in the future of linguistic mastery
-  </h3> -->
+<Layout title={title} description={description}>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <div class="phone-frame phone-frame-dashboard">
+          <img src="/screenshots/dashboard.png" alt="" loading="eager" />
+        </div>
+        <div class="phone-frame phone-frame-practice">
+          <img src="/screenshots/practice.png" alt="" loading="eager" />
+        </div>
+        <div class="phone-frame phone-frame-chat">
+          <img src="/screenshots/ai-chat.png" alt="" loading="eager" />
+        </div>
+      </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 my-8 gap-8">
-    <div class="flex flex-col justify-center h-full">
-      <!-- <h3 class="text-4xl text-violet-300 py-4">Headline</h3> -->
-      <p class="text-amber-50 text-xl px-8">
-        Ready to experience a smarter way to learn languages? Sign up for early
-        access to our mobile app!
-      </p>
-    </div>
-    <div class="flex flex-col justify-center h-full w-full px-2 md:px-8">
-      <div class="bg-black rounded-lg p-6">
-        <h3 class="text-3xl md:text-4xl text-center text-violet-300 pb-4">
-          Join the Revolution
-        </h3>
+      <div class="site-shell hero-content">
+        <p class="eyebrow">French listening, built for real short-form video</p>
+        <h1 id="hero-title">LiNGUiD</h1>
+        <p class="hero-lede">Learn French through real short-form video.</p>
+        <p class="hero-copy">
+          Tap captions, save words, practice what you hear, and chat in context.
+          LiNGUiD turns the videos learners already want to watch into a focused
+          path for listening, vocabulary, and confidence.
+        </p>
+
         <form
+          class="signup-form hero-form"
           name="contact"
           method="POST"
           netlify-honeypot="bot-field"
           data-netlify="true"
-          class="w-full space-y-6 text-white"
+          data-signup-form
         >
-          <!-- Honeypot Field (Hidden) -->
           <p class="hidden">
             <label>
-              Don’t fill this out if you’re human: <input name="bot-field" />
+              Do not fill this out if you are human: <input name="bot-field" />
             </label>
           </p>
-
-          <!-- Hidden Subject Field -->
+          <input type="hidden" name="subject" value="LiNGUiD early access" />
+          <label class="sr-only" for="hero-email">Email address</label>
           <input
-            type="hidden"
-            name="subject"
-            value="I want to Learn with Linguid!"
+            id="hero-email"
+            type="email"
+            name="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="Email address"
+            required
           />
-
-          <div>
-            <label class="block text-lg font-medium mb-2" for="email"
-              >Email</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="w-full p-2 bg-gray-800 border border-gray-600 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
-              required
-            />
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              class="w-full text-white font-semibold py-4 px-8 rounded-lg transition duration-200 text-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-800 hover:to-violet-800 cursor-pointer"
-            >
-              Get early access &rarr;
-            </button>
-          </div>
+          <button type="submit">Get early access</button>
+          <p class="form-status" data-form-status aria-live="polite"></p>
         </form>
-        <script>
-          document
-            .querySelector("form")
-            .addEventListener("submit", async function (event) {
-              event.preventDefault();
 
-              const formData = new FormData(this);
-
-              const response = await fetch("/.netlify/functions/auto-reply", {
-                method: "POST",
-                body: new URLSearchParams(formData).toString(),
-                headers: {
-                  "Content-Type": "application/x-www-form-urlencoded",
-                },
-              });
-
-              if (response.ok) {
-                alert("Check your email for confirmation!");
-              } else {
-                alert("Something went wrong. Please try again.");
-              }
-            });
-        </script>
+        <div class="trust-strip" aria-label="LiNGUiD product commitments">
+          <span>Real French</span>
+          <span>Tap-to-translate captions</span>
+          <span>Creator-respectful sourcing</span>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <section class="section section-intro">
+      <div class="site-shell intro-grid">
+        <div>
+          <p class="section-kicker">The product</p>
+          <h2>Listening practice that keeps the video magic intact.</h2>
+        </div>
+        <p>
+          LiNGUiD is built around the moment a learner hears something real and
+          wants to understand it. The app keeps the video experience familiar,
+          then adds the learning layer: captions, saved words, context, review,
+          and conversation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="site-shell feature-grid">
+        {
+          features.map((feature) => (
+            <article class="feature-card">
+              <p>{feature.label}</p>
+              <h3>{feature.title}</h3>
+              <span>{feature.text}</span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section screenshot-section" aria-labelledby="screens-title">
+      <div class="site-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Inside the app</p>
+          <h2 id="screens-title">A simple loop: watch, save, practice, chat.</h2>
+        </div>
+
+        <div class="screenshot-grid">
+          <figure class="screenshot-card screenshot-card-tall">
+            <img
+              src="/screenshots/practice.png"
+              alt="LiNGUiD practice screen with saved French words"
+              loading="lazy"
+            />
+            <figcaption>Practice saved words from the videos you watch.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="/screenshots/ai-chat.png"
+              alt="LiNGUiD AI chat screen practicing French conversation"
+              loading="lazy"
+            />
+            <figcaption>Chat in French when you need more context.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="/screenshots/dashboard.png"
+              alt="LiNGUiD dashboard with level, input, calendar, and saved words"
+              loading="lazy"
+            />
+            <figcaption>Track input and keep a steady learning habit.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section section-creator"
+      id="creator-respect"
+      aria-labelledby="creator-title"
+    >
+      <div class="site-shell creator-grid">
+        <div>
+          <p class="section-kicker">Creator-respectful by design</p>
+          <h2 id="creator-title">Built to earn trust before it asks for content.</h2>
+          <p>
+            LiNGUiD is designed around permission, attribution, and official
+            embeds. Public videos should stay connected to the people who made
+            them, and hosted content should only exist when a creator explicitly
+            says yes.
+          </p>
+        </div>
+        <ul class="promise-list">
+          {creatorPromises.map((promise) => <li>{promise}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section context-section" aria-labelledby="context-title">
+      <div class="site-shell context-grid">
+        <figure class="context-image">
+          <img
+            src="/screenshots/video-word-popup.png"
+            alt="LiNGUiD tap-to-translate word popup over a French video caption"
+            loading="lazy"
+          />
+        </figure>
+        <div>
+          <p class="section-kicker">Captions with context</p>
+          <h2 id="context-title">A word is easier to remember when it stays connected to the scene.</h2>
+          <p>
+            Learners can tap a caption word, save it, and return to the moment
+            where it appeared. The goal is not to flatten real video into a
+            flashcard pile. The goal is to make real speech easier to enter.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="early-access">
+      <div class="site-shell final-cta-inner">
+        <div>
+          <p class="section-kicker">Early access</p>
+          <h2>Help shape LiNGUiD before the first public release.</h2>
+          <p>
+            Join the early list for product updates and first access when the
+            next testing round opens.
+          </p>
+        </div>
+
+        <form
+          class="signup-form final-form"
+          name="contact"
+          method="POST"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          data-signup-form
+        >
+          <p class="hidden">
+            <label>
+              Do not fill this out if you are human: <input name="bot-field" />
+            </label>
+          </p>
+          <input type="hidden" name="subject" value="LiNGUiD early access" />
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input
+            id="footer-email"
+            type="email"
+            name="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="Email address"
+            required
+          />
+          <button type="submit">Request access</button>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const signupForms = document.querySelectorAll("[data-signup-form]");
+
+    signupForms.forEach((form) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const status = form.querySelector("[data-form-status]");
+        const button = form.querySelector("button");
+        const formData = new FormData(form);
+
+        status.textContent = "Sending...";
+        status.dataset.state = "pending";
+        button.disabled = true;
+
+        try {
+          const response = await fetch("/.netlify/functions/auto-reply", {
+            method: "POST",
+            body: new URLSearchParams(formData).toString(),
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error("Signup failed");
+          }
+
+          form.reset();
+          status.textContent = "You are on the list. Check your inbox for confirmation.";
+          status.dataset.state = "success";
+        } catch (error) {
+          status.textContent = "Something went wrong. Please try again in a moment.";
+          status.dataset.state = "error";
+        } finally {
+          button.disabled = false;
+        }
+      });
+    });
+  </script>
 </Layout>

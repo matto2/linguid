@@ -10,7 +10,7 @@ exports.handler = async (event) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   try {
-    // ✅ Convert the x-www-form-urlencoded data to an object
+    // Convert the x-www-form-urlencoded data to an object.
     const formData = new URLSearchParams(event.body);
     const email = formData.get('email'); // Extract email from the form
     const unsubscribeUrl = `https://learnwithlinguid.com/unsubscribe?email=${encodeURIComponent(email)}`;
@@ -22,7 +22,7 @@ exports.handler = async (event) => {
 
     console.log(`Checking if ${email} is unsubscribed...`);
 
-    // ✅ Check if the user is unsubscribed before sending the email
+    // Check if the user is unsubscribed before sending the email.
     const unsubscribedListPath = path.join('/tmp', 'unsubscribed.json');
 
     let unsubscribedList = [];
@@ -43,35 +43,27 @@ exports.handler = async (event) => {
       },
       to: email,
       from: 'learnwithlinguid@gmail.com', // Replace with your verified SendGrid sender email
-      subject: 'Welcome to The Future of Language Learning!',
-      text: `Thank you for signing up to test out LiNGUiD! We're thrilled to have you on board.
-      
-Your feedback is incredibly valuable to us. We want to make sure this app is the best it can be for language learners like you.
-      
-👉 Try the app here: https://linguid.vercel.app/
-      
-Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:
-      
-📝 Give Feedback: https://your-google-form-link.com
-      
-Thanks for being part of our journey!
+      subject: 'You are on the LiNGUiD early access list',
+      text: `Thanks for joining the LiNGUiD early access list.
+
+LiNGUiD helps learners practice French through real short-form video, tap-to-translate captions, saved words, review, and AI chat.
+
+We will send product updates and early testing details when the next round opens.
+
+Thanks for being part of the early group.
 - The LiNGUiD Team
 
 ----------------------------------------------------------
 If you no longer want to receive emails from us, you can unsubscribe here: ${unsubscribeUrl}`,
       
       html: `
-        <p>Thank you for signing up to test out <b>LiNGUiD</b>! We're thrilled to have you on board.</p>
-        
-        <p>Your feedback is incredibly valuable to us. We want to make sure this app is the best it can be for language learners like you.</p>
-        
-        <p><strong>👉 Try the app here:</strong> <a href="https://linguid.vercel.app/" target="_blank" style="color: #1a73e8; font-weight: bold;">Launch LiNGUiD</a></p>
-        
-        <p>Once you’ve checked out LiNGUiD, please take a few minutes to fill out this short form to share your thoughts and experiences:</p>
-        
-        <p><strong>📝 Give Feedback:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSe64p-rO44MoaeTdob6-ssTV2k-gOHdXMQm5eeiYiiuQCVQVg/viewform?usp=dialog" target="_blank" style="color: #1a73e8; font-weight: bold;">Submit Feedback</a></p>
+        <p>Thanks for joining the <b>LiNGUiD</b> early access list.</p>
 
-        <p>Thanks for being part of our journey!<br>- The LiNGUiD Team</p>
+        <p>LiNGUiD helps learners practice French through real short-form video, tap-to-translate captions, saved words, review, and AI chat.</p>
+
+        <p>We will send product updates and early testing details when the next round opens.</p>
+
+        <p>Thanks for being part of the early group.<br>- The LiNGUiD Team</p>
         
         <hr>
         <p style="font-size: 12px; color: #666;">

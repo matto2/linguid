@@ -1,25 +1,39 @@
 ---
 import "../styles/global.css";
-const { title } = Astro.props;
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
+
+const {
+  title = "LiNGUiD | Learn French through real short-form video",
+  description = "LiNGUiD turns real French videos into listening practice with tap-to-translate captions, saved words, review, and AI chat.",
+  canonicalPath = "/",
+} = Astro.props;
+
+const canonicalUrl = new URL(canonicalPath, "https://learnwithlinguid.com").toString();
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/linguid-icon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#0b0b10" />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col">
-    <div class="mx-auto px-4 2xl:px-0 max-w-5xl flex-1">
-      <!-- <Header /> -->
-      <NavBar />
-      <slot />
-    </div>
+  <body>
+    <NavBar />
+    <slot />
     <Footer />
   </body>
 </html>

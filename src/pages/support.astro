@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Support | LiNGUiD";
+const description =
+  "Contact LiNGUiD support for account, subscription, privacy, and app questions.";
+---
+
+<Layout title={title} description={description} canonicalPath="/support">
+  <main class="legal-page">
+    <section class="site-shell legal-shell">
+      <a class="legal-back" href="/">Back to LiNGUiD</a>
+      <article class="legal-card support-card">
+        <header>
+          <p class="section-kicker">Support</p>
+          <h1>How can we help?</h1>
+          <p class="legal-date">For account, subscription, privacy, or app questions.</p>
+        </header>
+
+        <div class="support-grid">
+          <section>
+            <h2>Email</h2>
+            <p>
+              Contact LiNGUiD at
+              <a href="mailto:learnwithlinguid@gmail.com">learnwithlinguid@gmail.com</a>.
+            </p>
+          </section>
+
+          <section>
+            <h2>Account deletion</h2>
+            <p>
+              You can delete your account from the LiNGUiD app in Settings. If
+              you cannot access your account, email us and include the email
+              address attached to your LiNGUiD account.
+            </p>
+          </section>
+
+          <section>
+            <h2>Subscriptions</h2>
+            <p>
+              LiNGUiD Pro subscriptions are managed through your Apple ID. Open
+              the App Store subscription settings on your device to manage or
+              cancel a subscription.
+            </p>
+          </section>
+
+          <section>
+            <h2>Legal</h2>
+            <p>
+              Read the <a href="/privacy-policy">Privacy Policy</a> and
+              <a href="/terms-of-service">Terms of Service</a>.
+            </p>
+          </section>
+        </div>
+      </article>
+    </section>
+  </main>
+</Layout>
