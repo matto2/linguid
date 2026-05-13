@@ -21,9 +21,18 @@ Target mix:
 
 Do not download or rehost YouTube, TikTok, Instagram, or TV content unless permission is explicit. Do not scrape captions without permission. Use official embeds by default.
 
+Fastest safe starting point: Easy Languages explicitly says its YouTube videos may be embedded in courses/curricula without obtaining permission. Use that for the first embed-only French batch, while still reaching out for caption/transcript permission before enabling LiNGUiD tap-to-translate captions.
+
 ## Strategy
 
 Lead with Julian as a person in direct outreach, not as a corporate partnerships desk.
+
+Parrot-like strategy, adapted safely:
+
+- Copy the user experience pattern: real short videos, low-friction discovery, captions, saved vocabulary, and creator attribution.
+- Do not copy any rights shortcuts. LiNGUiD should use official embeds, written caption permission, and signed hosting licenses.
+- Treat creators as acquisition partners, not raw supply. The pitch is "I want to send learners back to you," not "I want free content."
+- Build the first catalog from sources that already want to teach French, then add kids/studio content after the app has a credible public site and a clean permission trail.
 
 Outreach identity:
 
